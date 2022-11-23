@@ -1,18 +1,20 @@
 import "./App.css";
 import { ApiContext } from "./contextState/ApiContext";
-import { useContext } from "react";
+import { useState } from "react";
 
 import { JokeSetup } from "./components/JokeSetup";
-import { DisplayApi } from "./components/DisplayApi";
+import { GetApi } from "./components/GetApi";
+import { JokePunchline } from "./components/JokePunchline";
 
 function App() {
-  const { apiData, setApiData } = useContext(null);
+  const [apiData, setApiData] = useState(null);
 
   return (
     <ApiContext.Provider value={{ apiData, setApiData }}>
       <div className="App">
-        <DisplayApi />
+        <GetApi />
         <JokeSetup />
+        <JokePunchline />
       </div>
     </ApiContext.Provider>
   );

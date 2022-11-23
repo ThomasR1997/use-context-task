@@ -3,5 +3,5 @@ import { ApiContext } from "../contextState/ApiContext";
 
 export const JokePunchline = () => {
   const { apiData } = useContext(ApiContext);
-  return <p>{apiData.JokePunchline}</p>;
+  return <p>{apiData && apiData.punchline}</p>;
 };
